@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+}
+
+div div{
+  width: 10px;
+  height: 10px;
+  background: white;
+  
+  border: 1px solid black;
+  padding: 10px;
+  margin: 1px 1px;
+  
+}
+
+nav{
+  text-align: right;
+  margin: 10px;
+  background: salmon;
+  font-size: 20px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
