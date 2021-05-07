@@ -18,10 +18,18 @@ function toggle(){
  
     if( state == 0){
       this.setAttribute('state', 1)
-      this.style.background = 'black'
+      //~ this.style.background = 'black'
+      this.style.background = input_color.value
     }
     if( state == 1){
       this.setAttribute('state', 0)
       this.style.background = 'white'
     }
+}
+
+input_color = document.querySelector("input[type=color]")
+input_color.addEventListener("click", changeColor)
+
+function changeColor(){
+  console.log('works')
 }
