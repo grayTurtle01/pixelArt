@@ -38,10 +38,12 @@ erase_btn.addEventListener('click', eraseAllSquares)
 
 function eraseAllSquares(){
   squares = document.querySelectorAll(".square")
-  for( square of squares )
+  for( square of squares ){
     square.style.background = 'white'
-  
+    square.setAttribute('state', 0)
+  }
 }
+
 
 // Random Draw
 random_btn = document.querySelector("#random")
