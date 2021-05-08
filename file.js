@@ -55,11 +55,13 @@ function getRandomDraw(){
     b = Math.floor(Math.random()*255)
     
     square.style.background = `rgb(${r}, ${g}, ${b})`
+    
+    square.setAttribute('state', 1)
   }
 }
 
 
-// Random Draw
+// GitHub Dream
 github_btn = document.querySelector("#github")
 github_btn.addEventListener('click', getGithubDream)
 
@@ -71,6 +73,8 @@ function getGithubDream(){
     b = Math.floor(Math.random()*0)
     
     square.style.background = `rgb(${r}, ${g}, ${b})`
+    
+    square.setAttribute('state', 1)
   }
 }
 
