@@ -1,17 +1,20 @@
 container = document.querySelector(".container")
 container.innerHTML = ''
 
+// Render Squares
 for(i=1; i <= 1000; i++){
   div = document.createElement('div')
   //div.innerText = i
   
   div.setAttribute('state', 0)
+  div.setAttribute('class', 'square')
+  
   
   container.appendChild(div)
   div.addEventListener("click", toggle)
-  
 }
 
+// Toogle Squares
 function toggle(){
   
   state =  this.getAttribute('state') 
@@ -26,10 +29,16 @@ function toggle(){
       this.style.background = 'white'
     }
 }
-
 input_color = document.querySelector("input[type=color]")
-input_color.addEventListener("click", changeColor)
 
-function changeColor(){
-  console.log('works')
+
+// Erase Squares
+erase_btn = document.querySelector("#erase")
+erase_btn.addEventListener('click', eraseAllSquares)
+
+function eraseAllSquares(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares )
+    square.style.background = 'white'
+  
 }
