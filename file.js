@@ -42,3 +42,20 @@ function eraseAllSquares(){
     square.style.background = 'white'
   
 }
+
+// Random Draw
+random_btn = document.querySelector("#random")
+random_btn.addEventListener('click', getRandomDraw)
+
+function getRandomDraw(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    r = Math.floor(Math.random()*255)
+    g = Math.floor(Math.random()*255)
+    b = Math.floor(Math.random()*255)
+    
+    square.style.background = `rgb(${r}, ${g}, ${b})`
+  }
+}
+
+
