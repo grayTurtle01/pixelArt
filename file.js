@@ -59,3 +59,19 @@ function getRandomDraw(){
 }
 
 
+// Random Draw
+github_btn = document.querySelector("#github")
+github_btn.addEventListener('click', getGithubDream)
+
+function getGithubDream(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    r = Math.floor(Math.random()*0)
+    g = Math.floor(Math.random()*255)
+    b = Math.floor(Math.random()*0)
+    
+    square.style.background = `rgb(${r}, ${g}, ${b})`
+  }
+}
+
+
