@@ -2,7 +2,7 @@ container = document.querySelector(".container")
 container.innerHTML = ''
 
 // Render Squares
-for(i=1; i <= 1000; i++){
+for(i=1; i <= 256; i++){
   div = document.createElement('div')
   //div.innerText = i
   
@@ -80,4 +80,30 @@ function getGithubDream(){
   }
 }
 
+// Responsive Design
+window.onresize = function(){
+  margin = 2;
+  width = (window.innerWidth-(margin*16)) / 17
+  width = Math.floor(width)
+  console.log(width)
+  squares = document.querySelectorAll(".square")
+  
+  for( square of squares){
+    square.style.width = width
+    square.style.height = width
+  }
+}
+
+window.onload = function(){
+  margin = 2;
+  width = (window.innerWidth-(margin*16)) / 17
+  width = Math.floor(width)
+  console.log(width)
+  squares = document.querySelectorAll(".square")
+  
+  for( square of squares){
+    square.style.width = width
+    square.style.height = width
+  }
+}
 
