@@ -1,18 +1,25 @@
 container = document.querySelector(".container")
-container.innerHTML = ''
+
+large = 16;
 
 // Render Squares
-for(i=1; i <= 256; i++){
-  div = document.createElement('div')
-  //div.innerText = i
+function renderSquares(){
+  container.innerHTML = ''
   
-  div.setAttribute('state', 0)
-  div.setAttribute('class', 'square')
-  
-  
-  container.appendChild(div)
-  div.addEventListener("click", toggle)
+  for(i=1; i <= large**2; i++){
+    div = document.createElement('div')
+    div.innerText = i
+    
+    div.setAttribute('state', 0)
+    div.setAttribute('class', 'square')
+    
+    
+    container.appendChild(div)
+    div.addEventListener("click", toggle)
+  }
 }
+
+renderSquares()
 
 // Toogle Squares
 function toggle(){
@@ -81,29 +88,41 @@ function getGithubDream(){
 }
 
 // Responsive Design
-window.onresize = function(){
-  margin = 2;
-  width = (window.innerWidth-(margin*16)) / 17
-  width = Math.floor(width)
-  console.log(width)
+window.onresize = function (){
+  renderSquares()
+  reSizeSquares()
+}
+  
+  
+
+window.onload = reSizeSquares()
+
+function reSizeSquares(){
+  radio = document.querySelector("input[name=size]:checked")
+  large = radio.value
+  
+  margin = 6;
+  width = (container.clientWidth-(margin*large)) / (large)
+  width = Math.ceil(width)
   squares = document.querySelectorAll(".square")
   
   for( square of squares){
     square.style.width = width
     square.style.height = width
   }
+} 
+
+
+// Resize Dimensions
+radios = document.querySelectorAll("input[name=size]")
+for( radio of radios )
+  radio.addEventListener("click", resizeBoard)
+
+function  resizeBoard(){
+  console.log(this.value)
+  large = this.value
+  renderSquares()
+  reSizeSquares()
 }
 
-window.onload = function(){
-  margin = 2;
-  width = (window.innerWidth-(margin*16)) / 17
-  width = Math.floor(width)
-  console.log(width)
-  squares = document.querySelectorAll(".square")
-  
-  for( square of squares){
-    square.style.width = width
-    square.style.height = width
-  }
-}
 
