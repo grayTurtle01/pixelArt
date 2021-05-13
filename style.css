@@ -11,25 +11,17 @@ h1{
 
 
 .container{
-/*
-  border: 1px solid black;
-*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  
 }
 
 .container div{
-  width: 40px;
-  height: 40px;
-  background: white;
   
   border: 1px solid black;
-  margin: 1px 1px;
-  
-  padding: 0px;
-  
+
+  background: white;  
   font-size: 9px;
 }
 

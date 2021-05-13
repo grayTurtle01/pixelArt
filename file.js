@@ -13,7 +13,6 @@ function renderSquares(){
     div.setAttribute('state', 0)
     div.setAttribute('class', 'square')
     
-    
     container.appendChild(div)
     div.addEventListener("click", toggle)
   }
@@ -93,21 +92,21 @@ window.onresize = function (){
   reSizeSquares()
 }
   
-  
-
 window.onload = reSizeSquares()
 
 function reSizeSquares(){
   radio = document.querySelector("input[name=size]:checked")
   large = radio.value
+  console.log(large)
   
-  margin = 6;
-  width = (container.clientWidth-(margin*large)) / (large)
-  width = Math.ceil(width)
   squares = document.querySelectorAll(".square")
   
+  container.style.gridTemplateColumns = `repeat(${large}, 1fr)`
+  
+  square = squares[0]
+  width = square.clientWidth;
+  
   for( square of squares){
-    square.style.width = width
     square.style.height = width
   }
 } 
