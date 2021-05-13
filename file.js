@@ -14,27 +14,42 @@ function renderSquares(){
     div.setAttribute('class', 'square')
     
     container.appendChild(div)
-    div.addEventListener("click", toggle)
+    div.addEventListener("click", fillSquare)
   }
 }
 
 renderSquares()
 
-// Toogle Squares
-function toggle(){
+
+// fill Square
+function fillSquare(){
   
-  state =  this.getAttribute('state') 
+  if( checkbox.checked == false){
+    this.style.background = input_color.value
+    this.setAttribute('state', 1)
+  }
+  else
+    toggle(this)
+
+}
+
+// Toogle Squares
+checkbox = document.querySelector("input[type=checkbox]")
+function toggle(square){
+  
+  state =  square.getAttribute('state') 
  
     if( state == 0){
-      this.setAttribute('state', 1)
-      //~ this.style.background = 'black'
-      this.style.background = input_color.value
+      square.setAttribute('state', 1)
+      //~ square.style.background = 'black'
+      square.style.background = input_color.value
     }
     if( state == 1){
-      this.setAttribute('state', 0)
-      this.style.background = 'white'
+      square.setAttribute('state', 0)
+      square.style.background = 'white'
     }
 }
+
 input_color = document.querySelector("input[type=color]")
 
 
@@ -123,5 +138,8 @@ function  resizeBoard(){
   renderSquares()
   reSizeSquares()
 }
+
+
+
 
 
