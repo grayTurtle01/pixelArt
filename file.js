@@ -89,7 +89,7 @@ function getGithubDream(){
 
 // Responsive Design
 window.onresize = function (){
-  renderSquares()
+  //renderSquares()
   reSizeSquares()
 }
   
