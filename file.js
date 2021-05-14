@@ -112,7 +112,7 @@ window.onload = reSizeSquares()
 function reSizeSquares(){
   radio = document.querySelector("input[name=size]:checked")
   large = radio.value
-  console.log(large)
+  //console.log(large)
   
   squares = document.querySelectorAll(".square")
   
@@ -133,10 +133,39 @@ for( radio of radios )
   radio.addEventListener("click", resizeBoard)
 
 function  resizeBoard(){
-  console.log(this.value)
+  //console.log(this.value)
   large = this.value
   renderSquares()
   reSizeSquares()
+}
+
+
+// Pencil Mode
+pencil_check = document.querySelector("#pencil")
+pencil_check.onclick = function(){
+  
+  if(this.checked == true){
+    
+    for( square of squares ){
+      
+      square.onclick = function(){
+          //console.log("click works")
+      }
+    
+      square.onmouseover = function(){
+        this.style.background = input_color.value
+        this.setAttribute('state', 1)
+      }
+      
+    } 
+  }
+  else{
+     for( square of squares )
+        square.onmouseover = function(){
+        //this.style.background = input_color.value
+      }
+  
+  }
 }
 
 
