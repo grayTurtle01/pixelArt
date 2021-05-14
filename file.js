@@ -137,14 +137,17 @@ function  resizeBoard(){
   large = this.value
   renderSquares()
   reSizeSquares()
+  pencilMode()
 }
 
 
 // Pencil Mode
 pencil_check = document.querySelector("#pencil")
-pencil_check.onclick = function(){
+pencil_check.onclick = pencilMode
+
+function pencilMode(){
   
-  if(this.checked == true){
+  if(pencil_check.checked == true){
     
     for( square of squares ){
       
