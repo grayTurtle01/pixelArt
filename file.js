@@ -122,6 +122,30 @@ function flipsRandomSquares(){
   }
 }
 
+// Random Only Primary Colors
+primary_btn = document.querySelector("#random_primary")
+primary_btn.addEventListener('click', drawRandomPrimaryColors)
+
+function drawRandomPrimaryColors(){
+  
+  //colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta']
+  //colors = ['red', 'green', 'blue', 'yellow']
+  //colors = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+  //colors = ['red', 'green', 'blue', 'yellow', 'white', 'black', 'gray']
+  colors = ['red', 'green', 'blue', 'yellow', 'white']
+  
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    
+    random_index = Math.floor((Math.random() * colors.length))
+    color = colors[random_index]
+    
+    square.style.background = color
+    
+    square.setAttribute('state', 1)
+  }
+}
+
 
 
 
