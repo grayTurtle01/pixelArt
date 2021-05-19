@@ -23,9 +23,9 @@ renderSquares()
 
 // fill Square
 function fillSquare(){
-  
+    
   if( checkbox.checked == false){
-    this.style.background = input_color.value
+    this.style.backgroundColor = input_color.value
     this.setAttribute('state', 1)
   }
   else
@@ -234,15 +234,41 @@ for( radio of radios )
   radio.addEventListener("click", resizeBoard)
 
 function  resizeBoard(){
+  saveImage()
   //console.log(this.value)
   large = this.value
   renderSquares()
   reSizeSquares()
   pencilMode()
+  
+  loadImage()
 }
 
 
+/***  Save Image ***/
+imagen = []
+function saveImage(){
+  imagen = Array(large**2)
+  
+  for(i=0; i < large * large; i++){
+    color = squares[i].style.backgroundColor
+    imagen[i] = color
+  }
+}
 
+save_btn = document.querySelector("#save_image")
+save_btn.onclick = saveImage
+
+
+/***  Load Image ***/
+function loadImage(){
+  for(i=0; i < imagen.length; i++ ){
+    squares[i].style.backgroundColor = imagen[i]
+  }
+}
+
+load_btn = document.querySelector("#load_image")
+load_btn.onclick = loadImage
 
 
 
