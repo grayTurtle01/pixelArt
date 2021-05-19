@@ -8,7 +8,7 @@ function renderSquares(){
   
   for(i=1; i <= large**2; i++){
     div = document.createElement('div')
-    div.innerText = i
+    //div.innerText = i
     
     div.setAttribute('state', 0)
     div.setAttribute('class', 'square')
@@ -52,6 +52,7 @@ function toggle(square){
 
 input_color = document.querySelector("input[type=color]")
 
+/***** Buttons ******/
 
 // Erase Squares
 erase_btn = document.querySelector("#erase")
@@ -100,6 +101,29 @@ function getGithubDream(){
     square.setAttribute('state', 1)
   }
 }
+
+
+// Flip Coins
+flips_btn = document.querySelector("#flips")
+flips_btn.addEventListener('click', flipsRandomSquares)
+
+function flipsRandomSquares(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    porcent = Math.random()
+    if( porcent > 0.5 ){
+      square.style.background = `black`
+      square.setAttribute('state', 1)
+    }
+    else{
+      square.style.background = `white`
+      square.setAttribute('state', 0)
+    }
+  }
+}
+
+
+
 
 // Responsive Design
 window.onresize = function (){
