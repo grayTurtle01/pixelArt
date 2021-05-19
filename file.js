@@ -147,6 +147,24 @@ function drawRandomPrimaryColors(){
 }
 
 
+// Random Grays
+grays_btn = document.querySelector("#random_grays")
+grays_btn.addEventListener('click', drawRandomGrays)
+
+function drawRandomGrays(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    
+    g = Math.floor(Math.random()*255)
+   
+    square.style.background = `rgb(${g}, ${g}, ${g})`
+    
+    square.setAttribute('state', 1)
+  }
+}
+
+
+
 
 
 // Responsive Design
