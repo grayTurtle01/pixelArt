@@ -33,24 +33,6 @@ function fillSquare(){
 
 }
 
-// Toogle Squares
-checkbox = document.querySelector("input[type=checkbox]")
-function toggle(square){
-  
-  state =  square.getAttribute('state') 
- 
-    if( state == 0){
-      square.setAttribute('state', 1)
-      //~ square.style.background = 'black'
-      square.style.background = input_color.value
-    }
-    if( state == 1){
-      square.setAttribute('state', 0)
-      square.style.background = 'white'
-    }
-}
-
-input_color = document.querySelector("input[type=color]")
 
 /***** Buttons ******/
 
@@ -164,7 +146,60 @@ function drawRandomGrays(){
 }
 
 
+/***** Modes ******/
 
+// Pencil Mode
+pencil_check = document.querySelector("#pencil")
+pencil_check.onclick = pencilMode
+
+function pencilMode(){
+  
+  if(pencil_check.checked == true){
+    
+    for( square of squares ){
+      
+      square.onclick = function(){
+          //console.log("click works")
+      }
+    
+      square.onmouseover = function(){
+        this.style.background = input_color.value
+        this.setAttribute('state', 1)
+      }
+      
+    } 
+  }
+  else{
+     for( square of squares )
+        square.onmouseover = function(){
+        //this.style.background = input_color.value
+      }
+  
+  }
+}
+
+
+// Toogle Squares
+checkbox = document.querySelector("input[type=checkbox]")
+function toggle(square){
+  
+  state =  square.getAttribute('state') 
+ 
+    if( state == 0){
+      square.setAttribute('state', 1)
+      //~ square.style.background = 'black'
+      square.style.background = input_color.value
+    }
+    if( state == 1){
+      square.setAttribute('state', 0)
+      square.style.background = 'white'
+    }
+}
+
+input_color = document.querySelector("input[type=color]")
+
+
+/***** Responsive Design ******/
 
 
 // Responsive Design
@@ -206,36 +241,6 @@ function  resizeBoard(){
   pencilMode()
 }
 
-
-// Pencil Mode
-pencil_check = document.querySelector("#pencil")
-pencil_check.onclick = pencilMode
-
-function pencilMode(){
-  
-  if(pencil_check.checked == true){
-    
-    for( square of squares ){
-      
-      square.onclick = function(){
-          //console.log("click works")
-      }
-    
-      square.onmouseover = function(){
-        this.style.background = input_color.value
-        this.setAttribute('state', 1)
-      }
-      
-    } 
-  }
-  else{
-     for( square of squares )
-        square.onmouseover = function(){
-        //this.style.background = input_color.value
-      }
-  
-  }
-}
 
 
 
