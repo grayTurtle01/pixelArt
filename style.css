@@ -19,6 +19,13 @@ h1{
   grid-gap: 1px;
 }
 
+@media (min-width:700px){
+  .container{
+    width: 45%
+  }
+  
+}
+
 .square{
   
   border: 1px solid black;
