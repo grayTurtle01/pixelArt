@@ -60,6 +60,41 @@ function fillSquare(){
 }
 
 
+// Colors Panel
+colors = document.querySelectorAll(".colors")
+console.log(colors)
+for( color of colors )
+  color.onclick = selectColor
+
+function selectColor(){
+   color_selected = this.style.backgroundColor;
+   //console.log(color_selected)
+   hexa_color = rgbToHex(color_selected)
+   input_color.value = hexa_color
+}
+
+function rgbToHex( color_str ){
+  chanels = color_str.split('(')
+  chanels_str = chanels[1].slice(0,-1)
+  
+  chanels = chanels_str.split(',')
+  r = Number(chanels[0])
+  g = Number(chanels[1])
+  b = Number(chanels[2])
+  
+  r = "#"
+  for( chanel of chanels ){
+    hex_channel = Number(chanel).toString(16)
+    if( hex_channel.length == 1)
+      hex_channel = '0' + hex_channel
+    r += hex_channel
+  }
+  
+  return r
+  
+}
+
+
 /***** Buttons ******/
 
 // Erase Squares
