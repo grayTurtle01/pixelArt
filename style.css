@@ -19,14 +19,16 @@ h1{
   grid-gap: 1px;
 }
 
-.container div{
+.square{
   
   border: 1px solid black;
 
   background: white;  
   font-size: 9px;
   
+/*
   border-radius: 5px;
+*/
 }
 
 label{

@@ -2,19 +2,29 @@ container = document.querySelector(".container")
 
 large = 16;
 
+matrix = []
+
 // Render Squares
 function renderSquares(){
   container.innerHTML = ''
   
-  for(i=1; i <= large**2; i++){
-    div = document.createElement('div')
-    //div.innerText = i
-    
-    div.setAttribute('state', 0)
-    div.setAttribute('class', 'square')
-    
-    container.appendChild(div)
-    div.addEventListener("click", fillSquare)
+  for(y=0; y < large; y++){
+    row = []
+    for(x=0; x <large; x++){
+      div = document.createElement('div')
+      
+      // i = y*large + x
+      //div.innerText = i
+      
+      div.setAttribute('state', 0)
+      div.setAttribute('class', 'square')
+      
+      container.appendChild(div)
+      div.addEventListener("click", fillSquare)
+      
+      row.push('white')
+    }
+    matrix.push(row)
   }
 }
 
@@ -46,6 +56,11 @@ function eraseAllSquares(){
     square.style.background = 'white'
     square.setAttribute('state', 0)
   }
+  
+  for(y=0; y<large; y++)
+    for(x=0; x<large; x++)
+      matrix[y][x] = 'white'
+  
 }
 
 
@@ -248,11 +263,15 @@ function  resizeBoard(){
 /***  Save Image ***/
 imagen = []
 function saveImage(){
-  imagen = Array(large**2)
+  //~ imagen = Array(large**2)
   
-  for(i=0; i < large * large; i++){
+  for(y = 0; y < large; y++)
+    for(x = 0; x < large; x++){
+      i = y*large + x
     color = squares[i].style.backgroundColor
-    imagen[i] = color
+    //imagen[i] = color
+    
+    matrix[y][x] = color
   }
 }
 
@@ -262,8 +281,10 @@ save_btn.onclick = saveImage
 
 /***  Load Image ***/
 function loadImage(){
-  for(i=0; i < imagen.length; i++ ){
-    squares[i].style.backgroundColor = imagen[i]
+  for(y=0; y < large; y++)
+    for(x=0; x < large; x++ ){
+      i = y*large + x
+      squares[i].style.backgroundColor = matrix[y][x]
   }
 }
 
