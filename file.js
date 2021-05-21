@@ -1,6 +1,7 @@
 container = document.querySelector(".container")
 
 large = 16;
+max_large = 32;
 
 matrix = []
 
@@ -9,7 +10,7 @@ function renderSquares(){
   container.innerHTML = ''
   
   for(y=0; y < large; y++){
-    row = []
+    //~ row = []
     for(x=0; x <large; x++){
       div = document.createElement('div')
       
@@ -22,13 +23,28 @@ function renderSquares(){
       container.appendChild(div)
       div.addEventListener("click", fillSquare)
       
-      row.push('white')
+      //~ row.push('white')
     }
-    matrix.push(row)
+    //~ matrix.push(row)
   }
 }
 
 renderSquares()
+
+// setUp Matrix
+function setUpMatrix(){
+  
+  for(y = 0; y < max_large; y++ ){
+    row = []
+    for(x = 0; x < max_large; x++ ){
+      row.push('white')
+    }
+    matrix.push(row)
+    
+  }
+}
+
+setUpMatrix()
 
 
 // fill Square
@@ -56,11 +72,13 @@ function eraseAllSquares(){
     square.style.background = 'white'
     square.setAttribute('state', 0)
   }
-  
-  for(y=0; y<large; y++)
-    for(x=0; x<large; x++)
+  cleanMatrix()
+}
+
+function cleanMatrix(){
+  for(y=0; y<max_large; y++)
+    for(x=0; x<max_large; x++)
       matrix[y][x] = 'white'
-  
 }
 
 
@@ -263,15 +281,15 @@ function  resizeBoard(){
 /***  Save Image ***/
 imagen = []
 function saveImage(){
-  //~ imagen = Array(large**2)
+  
+  cleanMatrix()
   
   for(y = 0; y < large; y++)
     for(x = 0; x < large; x++){
       i = y*large + x
-    color = squares[i].style.backgroundColor
-    //imagen[i] = color
+      color = squares[i].style.backgroundColor
     
-    matrix[y][x] = color
+      matrix[y][x] = color
   }
 }
 
