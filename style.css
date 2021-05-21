@@ -42,14 +42,15 @@ h1{
   COLORS
 */
 
-#color{
+#bar_color{
   display: inline-block;
 }
 
-#colors div{
+#bar_colors div{
   width: 30px;
   height: 30px;
   display: inline-block;
+  border: 1px solid black;
 }
 
 
