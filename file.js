@@ -67,7 +67,7 @@ for( color of colors )
 
 function selectColor(){
    color_selected = this.style.backgroundColor;
-   console.log(color_selected)
+   //~ console.log(color_selected)
    
    hexa_color = rgbToHex(color_selected)
    input_color.value = hexa_color
@@ -214,6 +214,23 @@ function drawRandomGrays(){
 }
 
 
+// all Blues
+allBlue_btn = document.querySelector("#all_blue")
+allBlue_btn.addEventListener('click', drawAllBlue)
+
+function drawAllBlue(){
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    b = Math.floor(Math.random()*255)
+   
+    square.style.background = `rgb(0, 0, ${b})`
+    
+    square.setAttribute('state', 1)
+  }
+}
+
+
+
 /***** Modes ******/
 
 // Pencil Mode
@@ -328,8 +345,8 @@ function saveImage(){
   }
 }
 
-save_btn = document.querySelector("#save_image")
-save_btn.onclick = saveImage
+//~ save_btn = document.querySelector("#save_image")
+//~ save_btn.onclick = saveImage
 
 
 /***  Load Image ***/
@@ -341,8 +358,8 @@ function loadImage(){
   }
 }
 
-load_btn = document.querySelector("#load_image")
-load_btn.onclick = loadImage
+//~ load_btn = document.querySelector("#load_image")
+//~ load_btn.onclick = loadImage
 
 
 

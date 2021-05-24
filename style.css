@@ -44,7 +44,7 @@ h1{
 
 #bar_colors{
   display: flex;
-  justify-content:flex-start;
+  justify-content:center;
   align-items: center;
 }
 
@@ -57,6 +57,14 @@ h1{
   margin: 2px;
 }
 
+
+/*
+  Buttons_bar
+*/
+
+#bar_buttons{
+  
+}
 
 
 label{
