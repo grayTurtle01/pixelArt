@@ -42,8 +42,10 @@ h1{
   COLORS
 */
 
-#bar_color{
-  display: inline-block;
+#bar_colors{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
 }
 
 #bar_colors div{
@@ -52,6 +54,7 @@ h1{
   display: inline-block;
   border: 1px solid black;
   border-radius: 5px;
+  margin: 2px;
 }
 
 
