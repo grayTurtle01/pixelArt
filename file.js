@@ -62,13 +62,13 @@ function fillSquare(){
 
 // Colors Panel
 colors = document.querySelectorAll(".colors")
-console.log(colors)
 for( color of colors )
   color.onclick = selectColor
 
 function selectColor(){
    color_selected = this.style.backgroundColor;
-   //console.log(color_selected)
+   console.log(color_selected)
+   
    hexa_color = rgbToHex(color_selected)
    input_color.value = hexa_color
 }
