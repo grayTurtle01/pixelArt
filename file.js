@@ -220,12 +220,19 @@ allBlue_btn.addEventListener('click', drawAllBlue)
 
 function drawAllBlue(){
   squares = document.querySelectorAll(".square")
-  for( square of squares ){
-    b = Math.floor(Math.random()*255)
-   
-    square.style.background = `rgb(0, 0, ${b})`
-    
-    square.setAttribute('state', 1)
+  
+  
+  for(y=0; y<large; y++ )
+    for(x=0; x<large; x++ ){
+      
+      i = y*large + x
+      square = squares[i]
+      
+      blue = i
+      
+      square.style.background = `rgb(0, 0, ${blue})`
+      
+      square.setAttribute('state', 1)
   }
 }
 
