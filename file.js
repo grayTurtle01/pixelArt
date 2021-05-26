@@ -242,6 +242,7 @@ chess_btn = document.querySelector("#chess")
 chess_btn.addEventListener('click', drawChess)
 
 function drawChess(){
+  eraseAllSquares()
   squares = document.querySelectorAll(".square")
   
   for(y=0; y<large; y++ )
@@ -259,8 +260,6 @@ function drawChess(){
       square.setAttribute('state', 1)
   }
 }
-
-
 
 
 /***** Modes ******/
