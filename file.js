@@ -237,6 +237,31 @@ function drawAllBlue(){
 }
 
 
+// Chess
+chess_btn = document.querySelector("#chess")
+chess_btn.addEventListener('click', drawChess)
+
+function drawChess(){
+  squares = document.querySelectorAll(".square")
+  
+  for(y=0; y<large; y++ )
+    for(x=0; x<large; x += 2 ){
+      
+      i = y*large + x
+      
+      if( y % 2 == 0)
+        square = squares[i]
+      else
+        square = squares[i+1]
+      
+      square.style.background = `rgb(0, 0, 0)`
+      
+      square.setAttribute('state', 1)
+  }
+}
+
+
+
 
 /***** Modes ******/
 
