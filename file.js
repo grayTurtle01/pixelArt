@@ -255,7 +255,8 @@ function drawChess(){
       else
         square = squares[i+1]
       
-      square.style.background = `rgb(0, 0, 0)`
+      //~ square.style.background = `rgb(0, 0, 0)`
+      square.style.background = input_color.value
       
       square.setAttribute('state', 1)
   }
