@@ -239,7 +239,7 @@ function drawAllBlue(){
 
 // Chess
 chess_btn = document.querySelector("#chess")
-chess_btn.addEventListener('click', drawChess)
+chess_btn.addEventListener('click', drawChess) 
 
 function drawChess(){
   eraseAllSquares()
@@ -259,6 +259,29 @@ function drawChess(){
       square.style.background = input_color.value
       
       square.setAttribute('state', 1)
+  }
+}
+
+
+// Mondrian
+mondrian_btn = document.querySelector("#mondrian")
+mondrian_btn.addEventListener('click', drawMondrian)
+
+function drawMondrian(){
+  
+  //~ colors = ['red','yellow', 'blue', 'white', 'black', 'gray']
+  colors = ['red','yellow', 'blue', 'white', 'lightgray']
+  
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    
+    random_index = Math.floor((Math.random() * colors.length))
+    color = colors[random_index]
+    
+    square.style.background = color
+    //~ square.style.opacity = '0.5'
+    
+    square.setAttribute('state', 1)
   }
 }
 
