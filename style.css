@@ -11,8 +11,10 @@ h1{
 
 
 .container{
-  width: 80%;
   margin: auto;
+  margin-top: 20px;  
+  
+  width: 500px;  
   
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -21,21 +23,22 @@ h1{
 
 @media (min-width:700px){
   .container{
-    width: 45%
+    width: 40%
   }
   
 }
 
 .square{
-  
+/*
+  width: 16px;
+*/
   border: 1px solid black;
 
   background: white;  
-  font-size: 9px;
+  font-size: 0px;
   
-/*
   border-radius: 5px;
-*/
+
 }
 
 /* COLORS BAR*/
