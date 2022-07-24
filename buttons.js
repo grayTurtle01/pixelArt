@@ -171,9 +171,11 @@ mondrian_btn = document.querySelector("#mondrian")
 mondrian_btn.addEventListener('click', drawMondrian)
 
 function drawMondrian(){
+  let opacity = 0.6
   
   //~ colors = ['red','yellow', 'blue', 'white', 'black', 'gray']
   colors = ['red','yellow', 'blue', 'white', 'lightgray']
+  colors = [`rgba(255,0,0,${opacity})`,'#FFFD66', `rgba(0,0,255,${opacity})`, 'white', 'lightgray']
   
   squares = document.querySelectorAll(".square")
   for( square of squares ){
