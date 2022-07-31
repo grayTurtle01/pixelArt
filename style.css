@@ -14,7 +14,7 @@ h1{
   margin: auto;
   margin-top: 20px;  
   
-  width: 500px;  
+  width: 450px;  
   
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -37,7 +37,7 @@ h1{
   background: white;  
   font-size: 0px;
   
-  border-radius: 5px;
+  border-radius: 3px;
 
 }
 
@@ -47,6 +47,7 @@ h1{
   display: flex;
   justify-content:center;
   align-items: center;
+
 }
 
 #bar_colors div{
@@ -56,6 +57,8 @@ h1{
   border: 1px solid black;
   border-radius: 5px;
   margin: 2px;
+
+ 
 }
 
 
@@ -66,6 +69,8 @@ h1{
 #bar_buttons{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 
@@ -76,7 +81,8 @@ label{
 /* Modes_bar */
 #bar_modes{
   display:flex;
-  justify-content:center
+  justify-content:center;
+  margin-top: 10px;
 }
 
 
