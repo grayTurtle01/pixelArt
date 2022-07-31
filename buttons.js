@@ -176,6 +176,8 @@ function drawMondrian(){
   //~ colors = ['red','yellow', 'blue', 'white', 'black', 'gray']
   colors = ['red','yellow', 'blue', 'white', 'lightgray']
   colors = [`rgba(255,0,0,${opacity})`,'#FFFD66', `rgba(0,0,255,${opacity})`, 'white', 'lightgray']
+  colors = [`rgba(255,0,0,${opacity})`,`rgba(255,255,0, ${opacity})`, `rgba(0,0,255,${opacity})`, 'white', 'lightgray']
+ 
   
   squares = document.querySelectorAll(".square")
   for( square of squares ){
@@ -190,3 +192,23 @@ function drawMondrian(){
   }
 }
 
+// Mondrian_2
+document.querySelector("#mondrian_2").onclick = function(){
+let opacity = 0.6
+  
+  colors = [`rgba(255,0,0,${opacity})`,`rgba(255,255,0, ${opacity})`, `rgba(0,0,255,${opacity})`,
+            'white', 'lightgray',`rgba(0,0,0,${opacity})`,]
+  
+  squares = document.querySelectorAll(".square")
+  for( square of squares ){
+    
+    random_index = Math.floor((Math.random() * colors.length))
+    color = colors[random_index]
+    
+    square.style.background = color
+    //~ square.style.opacity = '0.5'
+    
+    square.setAttribute('state', 1)
+  
+}
+}
