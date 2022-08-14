@@ -1,6 +1,7 @@
-# pixelArt
+## Description :book:
 draw with Pixels
 
+## Demo 
 [Live Demo](https://grayturtle01.github.io/pixelArt/)
 
 ![Star](https://res.cloudinary.com/dqxtoises/image/upload/v1622064895/2021-05-26-154238_674x674_scrot_g41gs7.png)
