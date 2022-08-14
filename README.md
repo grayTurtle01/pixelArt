@@ -2,7 +2,7 @@
 Draw with Pixels
 
 ## ScreenShoot 📸
-![Star](https://res.cloudinary.com/dqxtoises/image/upload/v1622064895/2021-05-26-154238_674x674_scrot_g41gs7.png)
+<img style="width:500px; " src=https://res.cloudinary.com/dqxtoises/image/upload/v1622064895/2021-05-26-154238_674x674_scrot_g41gs7.png />
 
 ## Demo 🖥️ 
 [Live Demo](https://grayturtle01.github.io/pixelArt/) :rocket:
