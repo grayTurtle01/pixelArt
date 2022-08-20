@@ -16,11 +16,5 @@ Draw with Pixels
     <img style="width:500px; " src=https://res.cloudinary.com/dqxtoises/image/upload/v1622064783/heart-pixel_art_t4vu62.png />
     <img style="width:500px; " src=https://res.cloudinary.com/dqxtoises/image/upload/v1620338830/space_invaders_pixels_wklhmy.png />
     <img style="width:500px; " src=https://res.cloudinary.com/dqxtoises/image/upload/v1620749550/link_pixel_art_xfqdoj.png />
-<!--
-
-
-![Link Pixel Art]()
-![PokeBall](https://res.cloudinary.com/dqxtoises/image/upload/v1620817781/pokeball-pixel-art_hfmifj.png)
-![Rex](https://res.cloudinary.com/dqxtoises/image/upload/v1621006897/rex-pixel-art_ucg2ir.png)
--->
-</details>
+    <img style="width:400px;"  src=https://res.cloudinary.com/dqxtoises/image/upload/v1620817781/pokeball-pixel-art_hfmifj.png />
+    <img style="width:400px";  src=https://res.cloudinary.com/dqxtoises/image/upload/v1621006897/rex-pixel-art_ucg2ir.png />
